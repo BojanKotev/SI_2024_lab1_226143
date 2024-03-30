@@ -1,0 +1,98 @@
+01) Инсталирав Git и направил профил на GitHub.
+
+02) Го сменив default името на главната гранка од main во master.
+
+03) Креирав репозиториум на GitHub со име SI_2024_lab1_226143
+
+04) Направив локален репозиториум со исто име и го иницијализирав Git.
+	: git init
+	
+05) Се поврзав со оддалечниот репозиториум.
+	: git remote add origin git@github.com:BojanKotev/SI_2024_lab1_226143.git
+
+06) Креирав README file во локалниот репозиториум, го ставив фајлот на сцена и направив commit.
+	: git add README.md
+	: git commit -m "Initial commit"
+	
+07) Ги превсемав трите фајлови и направив commit.
+	: git add .
+	: git commit -m "Add starter code"
+	
+08) Го синхронизирав локалниот репозиториум со оддалечниот.
+	: git push -u origin master
+	
+09) Отворив две гранки за решавање на грешките.
+	: git branch bug1
+	: git branch bug2
+	
+10) Се префрлив на гранката bug1.
+	: git checkout bug1
+	
+11) По поправање на грешката, фајлот го ставив на сцена и направив commit.
+	: git add SILab1_1.java
+	: git commit -m "Fix wrong condition in filterOddLengthStrings"
+
+12) Се префрлив на гранката bug2.
+	: git checkout bug2
+	
+13) По поправање на грешката, фајлот го ставив на сцена и направив commit.
+	: git add SILab1_2.java
+	: git commit -m "Fix wrong condition in makeBigStringFrom"
+	
+14) Се вратив на гранката bug1.
+	: git checkout bug1
+	
+15) Го додадов повикот на методот и направив commit.
+	: git add SILab1Main.java
+	: git commit -m "Call method filterOddLengthStrings in main class"
+	
+16) Се вратив на гранката bug2.
+	: git checkout bug2
+	
+17) Го додадов повикот на методот и направив commit.
+	: git add SILab1Main.java
+	: git commit -m "Call method makeBigStringFrom in main class"
+	
+18) Ги синхронизирав сите гранки со оддалечниот репозиториум.
+	: git push --all
+	
+19) Се префрлив на главната гранка.
+	: git checkout master
+	
+20) Гранката bug1 ја споив кон главната гранка.
+	: git merge bug1
+	
+21) Ги синхронизирав сите гранки со оддалечниот репозиториум.
+	: git push --all
+	
+22) Се префрлив на гранката bug2.
+	: git checkout bug2
+	
+23) Направив rebase кон главната гранка, но имаше конфлинкт.
+	: git rebase master
+	| Го поправив конфлинктот во фајлот (беше обележан со <<< и >>>) и продолжив со rebase-от.
+	: git add SILab1Main.java
+	: git rebase --continue
+	
+24) Се префрлив на главната гранка.
+	: git checkout master
+	
+25) Гранката bug2 ја споив со главната гранка.
+	: git merge bug2
+	
+26) Ги синхронизирав сите гранки со оддалечниот репозиториум.
+	: git push --all
+	| Даваше конфликт, па тоа го направив со:
+	: git push --force
+	
+27) Ги синхронизирав сите гранки со оддалечниот репозиториум.
+	: git push --force --all
+	
+28) Досегашните git логови ги ставив во датотека logs.txt. Ја додадов и 226143.txt датотеката и направив commit.
+	: git log > logs.txt
+	: git add logs.txt
+	: git add 226143.txt
+	: git commit -m "Final commit"
+	
+29) Ги синхронизирав сите гранки со оддалечниот репозиториум.
+	: git push --all
